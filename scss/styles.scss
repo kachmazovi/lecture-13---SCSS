@@ -3,8 +3,40 @@
 @import "placeholders";
 @import "mixins";
 
+header {
+  @include go-flex(row, wrap, space-around, center);
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: gray;
+  margin-bottom: 100px;
+
+  nav {
+    width: 500px;
+
+    ul {
+      @include go-flex(row, wrap, space-between, center);
+    }
+  }
+
+  .burger-icon {
+    @include go-flex(column, nowrap, space-between, center);
+    display: none;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+
+    span {
+      display: block;
+      width: 100%;
+      height: 5px;
+      background-color: black;
+      border-radius: 5px;
+    }
+  }
+}
+
 main {
-  @include go-flex(row, space-between);
+  @include go-flex(row, wrap, space-between);
   width: 1200px;
   margin: 0 auto;
 
@@ -46,3 +78,5 @@ main {
     }
   }
 }
+
+@import "media";
